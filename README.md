@@ -1,2 +1,2 @@
-# 2epal_a1_school_project.github.io
+# iasonaskaranikolas.github.io
 School project
