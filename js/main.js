@@ -36,6 +36,6 @@ const loadTopNav = () => {
     }
 }
 
-window.onload = () => {
+window.addEventListener("DOMContentLoaded", () => {
     loadTopNav();
-}
+});
