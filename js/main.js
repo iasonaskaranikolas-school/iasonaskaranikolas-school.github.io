@@ -8,9 +8,6 @@ const loadTopNav = () => {
     try {
         const topnav = document.getElementById("topnav");
         if (topnav !== null && topnav !== undefined) {
-            for (const page of pages) {
-                console.log(page);
-            }
             for (const page in pages) {
                 console.log(page);
             }
