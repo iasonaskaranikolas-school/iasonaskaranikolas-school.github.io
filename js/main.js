@@ -17,19 +17,16 @@ const loadTopNav = () => {
     try {
         const topnav = document.getElementById("topnav");
         if (topnav !== null && topnav !== undefined) {
-            for (const name in pages) {
-                if (name !== null && name !== undefined) {
-                    const page = pages[name];
-                    if (page !== null && page !== undefined) {
-                        if ((page.display_name !== null && page.display_name !== undefined) && (page.path !== null && page.path !== undefined)) {
-                            const elem = document.createElement("a");
-                            elem.innerText = page.display_name;
-                            elem.setAttribute("href", page.path);
-                            if (window.location.pathname === page.path) {
-                                elem.classList.add("active");
-                            }
-                            topnav.appendChild(elem);
+            for (const page of pages) {
+                if (page !== null && page !== undefined) {
+                    if ((page.display_name !== null && page.display_name !== undefined) && (page.path !== null && page.path !== undefined)) {
+                        const elem = document.createElement("a");
+                        elem.innerText = page.display_name;
+                        elem.setAttribute("href", page.path);
+                        if (window.location.pathname === page.path) {
+                            elem.classList.add("active");
                         }
+                        topnav.appendChild(elem);
                     }
                 }
             }
