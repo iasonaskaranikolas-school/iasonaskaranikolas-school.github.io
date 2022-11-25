@@ -4,17 +4,23 @@ const pages = {
     "about": "/views/about.html"
 }
 
-try {
-    const topnav = document.getElementById("topnav");
-    if (topnav !== null && topnav !== undefined) {
-        for (const page of pages) {
-            console.log(page);
+const loadTopNav = () => {
+    try {
+        const topnav = document.getElementById("topnav");
+        if (topnav !== null && topnav !== undefined) {
+            for (const page of pages) {
+                console.log(page);
+            }
+            for (const page in pages) {
+                console.log(page);
+            }
+            console.log(topnav);
         }
-        for (const page in pages) {
-            console.log(page);
-        }
-        console.log(topnav);
+    } catch (e) {
+        console.log(e);
     }
-} catch (e) {
-    console.log(e);
+}
+
+window.onload = () => {
+    loadTopNav();
 }
