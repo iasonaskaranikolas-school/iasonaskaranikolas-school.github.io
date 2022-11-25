@@ -5,7 +5,16 @@ const pages = {
 }
 
 try {
-    const topnav = document.getElementById();
+    const topnav = document.getElementById("topnav");
+    if (topnav !== null && topnav !== undefined) {
+        for (const page of pages) {
+            console.log(page);
+        }
+        for (const page in pages) {
+            console.log(page);
+        }
+        console.log(topnav);
+    }
 } catch (e) {
     console.log(e);
 }
