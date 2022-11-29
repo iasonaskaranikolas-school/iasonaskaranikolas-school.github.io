@@ -7,55 +7,54 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://raw.githubusercontent.com/taoqf/node-html-parser/main/src/index.ts"></script>
     <script>
-        
+        import { parse } from 'node-html-parser';
+
+        const root = parse('<ul id="list"><li>Hello World</li></ul>');
+
+        console.log(root.firstChild.structure);
     </script>
 </head>
 
 <body>
-    <div class="topnav" id="topnav"></div>
-    <div style="padding-left:16px">
-        <div style="display: flex; align-items: center; justify-content: center;">
-            <div>
-                <a>A1 Πρόγραμμα</a>
-                <table>
-                    <tr>
-                        <th>Δευτέρα</th>
-                        <th>Τρίτη</th>
-                        <th>Τετάρτη</th>
-                        <th>Πέμπτη</th>
-                        <th>Παρασκευή</th>
-                    </tr>
-                    <tr>
-                        <td>Φυσική</td>
-                        <td>Αγωγή Υγείας</td>
-                    </tr>
-                    <tr>
-                        <td>Πολ Παιδεία</td>
-                        <td>Αρχές Οικονομίας</td>
-                    </tr>
-                    <tr>
-                        <td>Βασικές Αρχές Σύνθεσης</td>
-                        <td>Γεωμ</td>
-                    </tr>
-                    <tr>
-                        <td>Βασικές Αρχές Σύνθεσης</td>
-                        <td>Χημεία</td>
-                    </tr>
-                    <tr>
-                        <td>Νέα Ελ</td>
-                        <td>Άλγ</td>
-                    </tr>
-                    <tr>
-                        <td>Νέα Ελ</td>
-                        <td>ΣΕΠ</td>
-                    </tr>
-                    <tr>
-                        <td>Αρχές Οικονομίας</td>
-                        <td>Πολ Παιδεία</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+    <div>
+        <a>A1 Πρόγραμμα</a>
+        <table>
+            <tr>
+                <th>Δευτέρα</th>
+                <th>Τρίτη</th>
+                <th>Τετάρτη</th>
+                <th>Πέμπτη</th>
+                <th>Παρασκευή</th>
+            </tr>
+            <tr>
+                <td>Φυσική</td>
+                <td>Αγωγή Υγείας</td>
+            </tr>
+            <tr>
+                <td>Πολ Παιδεία</td>
+                <td>Αρχές Οικονομίας</td>
+            </tr>
+            <tr>
+                <td>Βασικές Αρχές Σύνθεσης</td>
+                <td>Γεωμ</td>
+            </tr>
+            <tr>
+                <td>Βασικές Αρχές Σύνθεσης</td>
+                <td>Χημεία</td>
+            </tr>
+            <tr>
+                <td>Νέα Ελ</td>
+                <td>Άλγ</td>
+            </tr>
+            <tr>
+                <td>Νέα Ελ</td>
+                <td>ΣΕΠ</td>
+            </tr>
+            <tr>
+                <td>Αρχές Οικονομίας</td>
+                <td>Πολ Παιδεία</td>
+            </tr>
+        </table>
     </div>
 </body>
 
