@@ -11,10 +11,10 @@
             try {
                 const params = new URLSearchParams(document.location.search);
 
-                console.log(params);
-
                 const table = params.has("table") ? params.get("table") : "table_2";
                 const header = params.has("header") ? params.get("header") : "";
+
+                console.log(table);
 
                 try {
                     document.getElementById("header").innerText = header;
@@ -56,7 +56,7 @@
 
 <body>
     <div>
-        <table id="table_2">
+        <table>
             <thead>
                 <tr>
                     <td rowspan="2"></td>
