@@ -12,6 +12,9 @@ if (isBrowser === true) {
 	url = `https://cors-everywhere.tk/get?q=${url}`;
 }
 
+console.log(isBrowser);
+console.log(url);
+
 const grabSchedule = async (elem) => {
 	const req = await fetch("http://2epal-chalandr.att.sch.gr/index_htm_files/2022%20Programma%20ana%20Tmima%2011%2007.html");
 	if (req !== null && req !== undefined) {
