@@ -27,6 +27,7 @@
                                         const td = document.createElement("td");
                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
                                         if (lesson.size !== null && lesson.size !== undefined) {
+                                            console.log(lesson.size);
                                             td.setAttribute("colspan", lesson.size);
                                         }
                                         tr.appendChild(td);
