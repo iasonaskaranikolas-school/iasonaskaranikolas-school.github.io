@@ -26,7 +26,7 @@
                                         const lesson = day.lessons[i2];
                                         const td = document.createElement("td");
                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
-                                        if (lesson.size !== null && lesson.size !== undefined) {
+                                        if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
                                             console.log(lesson.size);
                                             td.setAttribute("colspan", lesson.size);
                                         }
