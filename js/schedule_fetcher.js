@@ -10,6 +10,8 @@ let url = "http://2epal-chalandr.att.sch.gr/index_htm_files/2022%20Programma%20a
 
 if (isBrowser === true) {
 	url = `https://cors-everywhere.tk/get?q=${url}`;
+} else {
+	fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 }
 
 const grabSchedule = async (elem) => {
@@ -19,7 +21,7 @@ const grabSchedule = async (elem) => {
 			try {
 				const res = await req.text();
 				if (res !== null && res !== undefined) {
-					const doc = isBrowser === true ? new DOMParser().parseFromString(res, "text/html") : HTMLParser.parse(res);
+					const doc = isBrowser === true ? new DOMParser().parseFromString(res, "text/html") : (require("node-html-parser")).parse(res);
 					if (doc !== null && doc !== undefined) {
 						const thread = doc.getElementById(elem !== null && elem !== undefined ? elem : "table_2").childNodes[5]; // table_2 = A1
 						if (thread !== null && thread !== undefined) {
@@ -84,3 +86,10 @@ const grabSchedule = async (elem) => {
 		}
 	}
 };
+
+(async () => {
+	// Testing
+	if (isBrowser === false) {
+		console.log(await grabSchedule("table_2"));
+	}
+})();
