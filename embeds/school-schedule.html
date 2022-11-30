@@ -9,7 +9,16 @@
     <script>
         (async () => {
             try {
-                const sched = await grabSchedule("table_2");
+                const params = new URLSearchParams(document.location.search);
+
+                const table = params.has("table") ? params.get("table") : "table_2";
+                const header = params.has("header") ? params.get("header") : "";
+
+                try {
+                    document.getElementById("header").innerText = header;
+                } catch { }
+
+                const sched = await grabSchedule(table);
                 if (sched !== null && sched !== undefined) {
                     const tbody = document.getElementById("tbody");
                     if (tbody !== null && tbody !== undefined) {
@@ -49,7 +58,9 @@
             <thead>
                 <tr>
                     <td rowspan="2"></td>
-                    <th colspan="7">Α1</th>
+                    <center>
+                        <th colspan="7" id="header"></th>
+                    </center>
                 </tr>
                 <tr>
                     <th>1η</th>
