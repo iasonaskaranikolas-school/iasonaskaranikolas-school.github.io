@@ -16,7 +16,6 @@
                         for (const i in sched) {
                             if (sched[i] !== null && sched[i] !== undefined) {
                                 const day = sched[i];
-                                console.log(day);
                                 const tr = document.createElement("tr");
                                 const th = document.createElement("th");
                                 th.innerText = day.title;
@@ -27,7 +26,6 @@
                                         const td = document.createElement("td");
                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
                                         if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
-                                            console.log(lesson.size);
                                             td.setAttribute("colspan", lesson.size);
                                         }
                                         tr.appendChild(td);
