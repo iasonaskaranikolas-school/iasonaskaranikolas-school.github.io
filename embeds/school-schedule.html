@@ -12,7 +12,7 @@
                 const params = new URLSearchParams(document.location.search);
 
                 const table = params.has("table") ? params.get("table") : "table_2";
-                const header = params.has("header") ? params.get("header") : "";
+                const header = params.has("header") ? params.get("header") : "A1";
 
                 console.log(params.get("table"));
 
