@@ -14,7 +14,7 @@
                 const table = params.has("table") ? params.get("table") : "table_2";
                 const header = params.has("header") ? params.get("header") : "";
 
-                console.log(table);
+                console.log(params.get("table"));
 
                 try {
                     document.getElementById("header").innerText = header;
