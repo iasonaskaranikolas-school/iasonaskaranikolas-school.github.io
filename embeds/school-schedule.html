@@ -13,9 +13,27 @@
                 if (sched !== null && sched !== undefined) {
                     const tbody = document.getElementById("tbody");
                     if (tbody !== null && tbody !== undefined) {
-                        for (const day in sched) {
-                            console.log(day);
-                            const title_elem = document.createElement("th");
+                        for (const i in sched) {
+                            if (sched[i] !== null && sched[i] !== undefined) {
+                                const day = sched[i];
+                                console.log(day);
+                                const tr = document.createElement("tr");
+                                const th = document.createElement("th");
+                                th.innerText = day.title;
+                                tr.appendChild(th);
+                                for (const i2 in day.lessons) {
+                                    if (day.lessons[i2] !== null && day.lessons[i2] !== undefined) {
+                                        const lesson = day.lessons[i2];
+                                        console.log(lesson);
+                                        const td = document.createElement("td");
+                                        td.innerHTML = `<div><span>${lesson.name}</span></div>`;
+                                        if (lesson.size !== null && lesson.size !== undefined) {
+                                            td.setAttribute("colspan", lesson.size);
+                                        }
+                                        tr.appendChild(td);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -45,111 +63,7 @@
                 </tr>
             </thead>
             <tbody id="tbody">
-                <tr>
-                    <th>Δε</th>
-                    <td>
-                        <div><span>Φυσική</span></div>
-                    </td>
-                    <td>
-                        <div><span>Πολ Παιδεία</span></div>
-                    </td>
-                    <td colspan="2">
-                        <div><span>Βασικές Αρχές Σύνθεσης</span></div>
-                    </td>
 
-                    <td colspan="2">
-                        <div><span>Νέα Ελ</span></div>
-                    </td>
-
-                    <td>
-                        <div><span>Αρχές Οικονομίας</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Τρ</th>
-                    <td>
-                        <div><span>Αγωγή Υγείας</span></div>
-                    </td>
-                    <td>
-                        <div><span>Αρχές Οικονομίας</span></div>
-                    </td>
-                    <td>
-                        <div><span>Γεωμ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Χημεία</span></div>
-                    </td>
-                    <td>
-                        <div><span>Άλγ</span></div>
-                    </td>
-                    <td>
-                        <div><span>ΣΕΠ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Πολ Παιδεία</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Τε</th>
-                    <td colspan="2">
-                        <div><span>Πλη-Τεχ</span></div>
-                    </td>
-
-                    <td>
-                        <div><span>Βιολ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Αγγλικά</span></div>
-                    </td>
-                    <td colspan="3">
-                        <div><span>Ζώνη</span></div>
-                    </td>
-
-
-                </tr>
-                <tr>
-                    <th>Πε</th>
-                    <td colspan="2">
-                        <div><span>Νέα Ελ</span></div>
-                    </td>
-
-                    <td>
-                        <div><span>Φυσ. Αγ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Αγωγή Υγείας</span></div>
-                    </td>
-                    <td>
-                        <div><span>ΣΕΠ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Άλγ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Θρησκ</span></div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Πα</th>
-                    <td colspan="2">
-                        <div><span>Πλη-Τεχ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Άλγ</span></div>
-                    </td>
-                    <td>
-                        <div><span>Ιστορία</span></div>
-                    </td>
-                    <td>
-                        <div><span>Φυσική</span></div>
-                    </td>
-                    <td>
-                        <div><span>Αγγλικά</span></div>
-                    </td>
-                    <td>
-                        <div><span>Φυσ. Αγ</span></div>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>
