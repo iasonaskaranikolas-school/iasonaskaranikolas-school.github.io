@@ -13,7 +13,7 @@
                 if (sched !== null && sched !== undefined) {
                     const tbody = document.getElementById("tbody");
                     if (tbody !== null && tbody !== undefined) {
-                        for (const day of sched) {
+                        for (const day in sched) {
                             console.log(day);
                             const title_elem = document.createElement("th");
                         }
