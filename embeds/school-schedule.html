@@ -24,7 +24,6 @@
                                 for (const i2 in day.lessons) {
                                     if (day.lessons[i2] !== null && day.lessons[i2] !== undefined) {
                                         const lesson = day.lessons[i2];
-                                        console.log(lesson);
                                         const td = document.createElement("td");
                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
                                         if (lesson.size !== null && lesson.size !== undefined) {
@@ -33,6 +32,7 @@
                                         tr.appendChild(td);
                                     }
                                 }
+                                tbody.appendChild(tr);
                             }
                         }
                     }
