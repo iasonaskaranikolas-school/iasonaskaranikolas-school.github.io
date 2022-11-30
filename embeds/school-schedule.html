@@ -14,8 +14,6 @@
                 const table = params.has("table") ? params.get("table") : "table_2";
                 const header = params.has("header") ? params.get("header") : "A1";
 
-                console.log(params.get("table"));
-
                 try {
                     document.getElementById("header").innerText = header;
                 } catch { }
@@ -25,31 +23,33 @@
                     const tbody = document.getElementById("tbody");
                     if (tbody !== null && tbody !== undefined) {
                         for (const i in sched) {
-                            if (sched[i] !== null && sched[i] !== undefined) {
-                                const day = sched[i];
-                                const tr = document.createElement("tr");
-                                const th = document.createElement("th");
-                                th.innerText = day.title;
-                                tr.appendChild(th);
-                                for (const i2 in day.lessons) {
-                                    if (day.lessons[i2] !== null && day.lessons[i2] !== undefined) {
-                                        const lesson = day.lessons[i2];
-                                        const td = document.createElement("td");
-                                        td.innerHTML = `<div><span>${lesson.name}</span></div>`;
-                                        if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
-                                            td.setAttribute("colspan", lesson.size);
-                                        }
-                                        tr.appendChild(td);
+                            try {
+                                if (sched[i] !== null && sched[i] !== undefined) {
+                                    const day = sched[i];
+                                    const tr = document.createElement("tr");
+                                    const th = document.createElement("th");
+                                    th.innerText = day.title;
+                                    tr.appendChild(th);
+                                    for (const i2 in day.lessons) {
+                                        try {
+                                            if (day.lessons[i2] !== null && day.lessons[i2] !== undefined) {
+                                                const lesson = day.lessons[i2];
+                                                const td = document.createElement("td");
+                                                td.innerHTML = `<div><span>${lesson.name}</span></div>`;
+                                                if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
+                                                    td.setAttribute("colspan", lesson.size);
+                                                }
+                                                tr.appendChild(td);
+                                            }
+                                        } catch { }
                                     }
+                                    tbody.appendChild(tr);
                                 }
-                                tbody.appendChild(tr);
-                            }
+                            } catch { }
                         }
                     }
                 }
-            } catch (e) {
-                console.log(e);
-            }
+            } catch { }
         });
     </script>
 </head>
