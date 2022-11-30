@@ -8,7 +8,20 @@
     <script src="https://cdn.jasonkaranik.tk/files/2epal_xalandriou_schedule_grabber.js"></script>
     <script>
         (async () => {
-            console.log(await grabSchedule("table_2"));
+            try {
+                const sched = await grabSchedule("table_2");
+                if (sched !== null && sched !== undefined) {
+                    const tbody = document.getElementById("tbody");
+                    if (tbody !== null && tbody !== undefined) {
+                        for (const day of sched) {
+                            console.log(day);
+                            const title_elem = document.createElement("th");
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
         })();
     </script>
 </head>
@@ -31,7 +44,7 @@
                     <th>7η</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tbody">
                 <tr>
                     <th>Δε</th>
                     <td>
