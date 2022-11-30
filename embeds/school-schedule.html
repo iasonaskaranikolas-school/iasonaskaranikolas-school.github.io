@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.jasonkaranik.tk/files/2epal_xalandriou_schedule_grabber.js"></script>
     <script>
-        (async () => {
+        window.addEventListener("DOMContentLoaded", async () => {
             try {
                 const params = new URLSearchParams(document.location.search);
 
@@ -48,7 +48,7 @@
             } catch (e) {
                 console.log(e);
             }
-        })();
+        });
     </script>
 </head>
 
@@ -58,9 +58,7 @@
             <thead>
                 <tr>
                     <td rowspan="2"></td>
-                    <center>
-                        <th colspan="7" id="header"></th>
-                    </center>
+                    <th colspan="7" id="header"></th>
                 </tr>
                 <tr>
                     <th>1η</th>
