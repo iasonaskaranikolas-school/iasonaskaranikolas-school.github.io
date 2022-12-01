@@ -11,10 +11,10 @@
             try {
                 const params = new URLSearchParams(document.location.search);
 
-                const class_param = params.has("class") ? params.get("class") : "A1";
+                const class_param = params.has("class") ? params.get("class") : "";
 
-                let table = "table_2";
-                let header = "A1";
+                let table;
+                let header;
 
                 switch (class_param.toUpperCase()) {
                     case "A1":
