@@ -45,24 +45,28 @@
                             try {
                                 if (sched[i] !== null && sched[i] !== undefined) {
                                     const day = sched[i];
-                                    const tr = document.createElement("tr");
-                                    const th = document.createElement("th");
-                                    th.innerText = day.title;
-                                    tr.appendChild(th);
-                                    for (const i2 in day.lessons) {
-                                        try {
-                                            if (day.lessons[i2] !== null && day.lessons[i2] !== undefined) {
-                                                const lesson = day.lessons[i2];
-                                                const td = document.createElement("td");
-                                                td.innerHTML = `<div><span>${lesson.name}</span></div>`;
-                                                if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
-                                                    td.setAttribute("colspan", lesson.size);
+                                    if ((day.title !== null && day.title !== undefined) && (day.lessons !== null && day.lessons !== undefined)) {
+                                        const tr = document.createElement("tr");
+                                        const th = document.createElement("th");
+                                        th.innerText = day.title;
+                                        tr.appendChild(th);
+                                        for (const i2 in day.lessons) {
+                                            try {
+                                                if (day.lessons[i2] !== null && day.lessons[i2] !== undefined) {
+                                                    const lesson = day.lessons[i2];
+                                                    if (lesson.name !== null && lesson.name !== undefined) {
+                                                        const td = document.createElement("td");
+                                                        td.innerHTML = `<div><span>${lesson.name}</span></div>`;
+                                                        if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
+                                                            td.setAttribute("colspan", lesson.size);
+                                                        }
+                                                        tr.appendChild(td);
+                                                    }
                                                 }
-                                                tr.appendChild(td);
-                                            }
-                                        } catch { }
+                                            } catch { }
+                                        }
+                                        tbody.appendChild(tr);
                                     }
-                                    tbody.appendChild(tr);
                                 }
                             } catch { }
                         }
