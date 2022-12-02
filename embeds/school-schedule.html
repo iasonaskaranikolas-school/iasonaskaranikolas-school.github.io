@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.jasonkaranik.tk/files/2epal_xalandriou_schedule_grabber.js"></script>
     <style>
-        .gray_th {
-            background-color: #dddddd;
-        }
-
-        .cti td:hover, th:hover {
+        .cti td:hover,
+        th:hover {
             background-color: #dddddd;
         }
     </style>
@@ -57,7 +54,6 @@
                                     if ((day.title !== null && day.title !== undefined) && (day.lessons !== null && day.lessons !== undefined)) {
                                         const tr = document.createElement("tr");
                                         const th = document.createElement("th");
-                                        th.classList.add("cti");
                                         th.innerText = day.title;
                                         tr.appendChild(th);
                                         for (const i2 in day.lessons) {
@@ -97,13 +93,13 @@
                     <th colspan="7" id="header"></th>
                 </tr>
                 <tr>
-                    <th class="gray_th">1η</th>
-                    <th class="gray_th">2η</th>
-                    <th class="gray_th">3η</th>
-                    <th class="gray_th">4η</th>
-                    <th class="gray_th">5η</th>
-                    <th class="gray_th">6η</th>
-                    <th class="gray_th">7η</th>
+                    <th style="background-color: #dddddd;">1η</th>
+                    <th style="background-color: #dddddd;">2η</th>
+                    <th style="background-color: #dddddd;">3η</th>
+                    <th style="background-color: #dddddd;">4η</th>
+                    <th style="background-color: #dddddd;">5η</th>
+                    <th style="background-color: #dddddd;">6η</th>
+                    <th style="background-color: #dddddd;">7η</th>
                 </tr>
             </thead>
             <tbody id="tbody">
