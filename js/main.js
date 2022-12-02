@@ -30,9 +30,9 @@ const loadTopNav = () => {
                     }
                 }
             }
-            const copyright = document.createElement("a");
+            const copyright = document.createElement("p");
             copyright.innerText = `© Copyright 2022 - 2022 Jasonkaranik`;
-            copyright.setAttribute("style", "float: right; text-align: right;");
+            copyright.setAttribute("style", "float: right; text-align: right; color: #f2f2f2;");
             topnav.appendChild(copyright);
         }
     } catch (e) {
