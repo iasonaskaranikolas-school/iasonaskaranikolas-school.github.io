@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.jasonkaranik.tk/files/2epal_xalandriou_schedule_grabber.js"></script>
-    <style>
-        td:hover {
-            background-color: #e0dcdc;
-        }
-    </style>
     <script>
         window.addEventListener("DOMContentLoaded", async () => {
             try {
@@ -62,6 +57,7 @@
                                                     if (lesson.name !== null && lesson.name !== undefined) {
                                                         const td = document.createElement("td");
                                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
+                                                        td.setAttribute("hover { background-color: #e0dcdc; }");
                                                         if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
                                                             td.setAttribute("colspan", lesson.size);
                                                         }
