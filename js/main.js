@@ -33,7 +33,7 @@ const loadTopNav = () => {
             const copyright = document.createElement("a");
             copyright.innerText = `© Copyright 2022 - 2022 Jasonkaranik`;
             copyright.setAttribute("style", "float: right; text-align: right; color: #f2f2f2; padding: 14px 16px; font-size: 17px; text-decoration: none;");
-            document.body.appendChild(copyright);
+            document.getElementById("hi").appendChild(copyright);
         }
     } catch (e) {
         console.log(e);
