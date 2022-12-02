@@ -65,6 +65,11 @@
                                                     const lesson = day.lessons[i2];
                                                     if (lesson.name !== null && lesson.name !== undefined) {
                                                         const td = document.createElement("td");
+                                                        td.onclick = () => {
+                                                            try {
+                                                                navigator.clipboard.writeText(lesson.name);
+                                                            } catch { }
+                                                        }
                                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
                                                         if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
                                                             td.setAttribute("colspan", lesson.size);
