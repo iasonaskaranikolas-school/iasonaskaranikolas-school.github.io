@@ -11,7 +11,7 @@
             background-color: #dddddd;
         }
 
-        td:hover {
+        .cti td:hover, th:hover {
             background-color: #dddddd;
         }
     </style>
@@ -57,6 +57,7 @@
                                     if ((day.title !== null && day.title !== undefined) && (day.lessons !== null && day.lessons !== undefined)) {
                                         const tr = document.createElement("tr");
                                         const th = document.createElement("th");
+                                        th.classList.add("cti");
                                         th.innerText = day.title;
                                         tr.appendChild(th);
                                         for (const i2 in day.lessons) {
@@ -65,6 +66,7 @@
                                                     const lesson = day.lessons[i2];
                                                     if (lesson.name !== null && lesson.name !== undefined) {
                                                         const td = document.createElement("td");
+                                                        td.classList.add("cti");
                                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
                                                         if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
                                                             td.setAttribute("colspan", lesson.size);
