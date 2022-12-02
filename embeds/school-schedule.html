@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.jasonkaranik.tk/files/2epal_xalandriou_schedule_grabber.js"></script>
     <style>
-        .cti td:hover,
-        th:hover {
+        th {
+            background-color: #dddddd;
+        }
+
+        td:hover {
             background-color: #dddddd;
         }
     </style>
@@ -62,7 +65,6 @@
                                                     const lesson = day.lessons[i2];
                                                     if (lesson.name !== null && lesson.name !== undefined) {
                                                         const td = document.createElement("td");
-                                                        td.classList.add("cti");
                                                         td.innerHTML = `<div><span>${lesson.name}</span></div>`;
                                                         if ((lesson.size !== null && lesson.size !== undefined) && (lesson.size !== 0)) {
                                                             td.setAttribute("colspan", lesson.size);
@@ -93,13 +95,13 @@
                     <th colspan="7" id="header"></th>
                 </tr>
                 <tr>
-                    <th style="background-color: #dddddd;">1η</th>
-                    <th style="background-color: #dddddd;">2η</th>
-                    <th style="background-color: #dddddd;">3η</th>
-                    <th style="background-color: #dddddd;">4η</th>
-                    <th style="background-color: #dddddd;">5η</th>
-                    <th style="background-color: #dddddd;">6η</th>
-                    <th style="background-color: #dddddd;">7η</th>
+                    <th>1η</th>
+                    <th>2η</th>
+                    <th>3η</th>
+                    <th>4η</th>
+                    <th>5η</th>
+                    <th>6η</th>
+                    <th>7η</th>
                 </tr>
             </thead>
             <tbody id="tbody">
