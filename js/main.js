@@ -30,17 +30,10 @@ const loadTopNav = () => {
                     }
                 }
             }
-        }
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-const loadCopyrightFooter = () => {
-    try {
-        const footer = document.getElementById("footer");
-        if (footer !== null && footer !== undefined) {
-            footer.innerText = `© Copyright 2022 - 2022 Jasonkaranik`;
+            const copyright = document.createElement("a");
+            copyright.innerText = `© Copyright 2022 - 2022 Jasonkaranik`;
+            copyright.setAttribute("style", "float: right; text-align: right;");
+            topnav.appendChild(copyright);
         }
     } catch (e) {
         console.log(e);
@@ -49,5 +42,4 @@ const loadCopyrightFooter = () => {
 
 window.addEventListener("DOMContentLoaded", () => {
     loadTopNav();
-    loadCopyrightFooter();
 });
