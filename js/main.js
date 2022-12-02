@@ -36,6 +36,18 @@ const loadTopNav = () => {
     }
 }
 
+const loadCopyrightFooter = () => {
+    try {
+        const footer = document.getElementById("footer");
+        if (footer !== null && footer !== undefined) {
+            footer.innerText = `© Copyright 2022 - 2022 Jasonkaranik`;
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     loadTopNav();
+    loadCopyrightFooter();
 });
