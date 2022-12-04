@@ -9,4 +9,4 @@ jobs:
     steps:
     - name: Clear Cloudflare Cache
       run: |
-        curl -X POST -s -H 'X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY}}' -H 'X-Auth-Email: ${{ secrets.PERSONAL_EMAIL}}' -H "Content-type: application/json" -d '{"files":["schoolwebsite.jasonkaranik.tk/*"]}' 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_DOMAIN_ID}}/purge_cache'
+        curl -X POST -s -H 'X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY}}' -H 'X-Auth-Email: ${{ secrets.PERSONAL_EMAIL}}' -H "Content-type: application/json" -d '{"files":["https://schoolwebsite.jasonkaranik.tk/*"]}' 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_DOMAIN_ID}}/purge_cache'
