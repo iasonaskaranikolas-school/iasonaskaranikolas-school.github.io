@@ -16,5 +16,4 @@ copyright.setAttribute("style", "float: right; text-align: right;");
 copyright.setAttribute("href", "https://en.wikipedia.org/wiki/Copyright");
 copyright.setAttribute("target", "_blank");
 copyright.setAttribute("rel", "noreferrer");
-topnav.appendChild(copyright);
 ```
