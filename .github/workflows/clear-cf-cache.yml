@@ -1,4 +1,5 @@
 name: "Clear Cloudflare Cache"
+run-name: "Clear Cloudflare Cache"
 
 on:
   push:
