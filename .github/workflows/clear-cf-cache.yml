@@ -1,3 +1,5 @@
+name: "Clear Cloudflare Cache"
+
 on:
   workflow_dispatch:
   
@@ -5,6 +7,6 @@ jobs:
   clear-cf-cache:
     runs-on: ubuntu-latest
     steps:
-    - name: Clears Cloudflare Cache
+    - name: Clear Cloudflare Cache
       run: |
-        curl -X POST -H 'X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY}}' -H 'X-Auth-Email: ${{ secrets.PERSONAL_EMAIL}}' -H "Content-type: application/json" -d '{"prefixes":["schoolwebsite.jasonkaranik.tk/*"]}' 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_DOMAIN_ID}}/purge_cache'
+        curl -X POST -s -H 'X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY}}' -H 'X-Auth-Email: ${{ secrets.PERSONAL_EMAIL}}' -H "Content-type: application/json" -d '{"files":["schoolwebsite.jasonkaranik.tk/*"]}' 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_DOMAIN_ID}}/purge_cache'
