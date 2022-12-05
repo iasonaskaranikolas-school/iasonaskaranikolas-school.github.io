@@ -13,4 +13,4 @@ jobs:
     steps:
     - name: Clear Cloudflare Cache
       run: |
-        curl -X POST -s -H 'X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY}}' -H 'X-Auth-Email: ${{ secrets.PERSONAL_EMAIL}}' -H "Content-type: application/json" -d '{"purge_everything":true}' 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_DOMAIN_ID}}/purge_cache'
+        curl -X POST -s -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_PURGE_CACHE_API_KEY}}' -H 'X-Auth-Email: ${{ secrets.PERSONAL_EMAIL}}' -H "Content-type: application/json" -d '{"purge_everything":true}' 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_DOMAIN_ID}}/purge_cache'
