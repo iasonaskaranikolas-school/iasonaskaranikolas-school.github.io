@@ -9,7 +9,7 @@ on:
   
 jobs:
   clear-cf-cache:
-  name: Clear Cloudflare Cache
+    name: Clear Cloudflare Cache
     runs-on: ubuntu-latest
     steps:
     - name: Clear Cloudflare Cache
