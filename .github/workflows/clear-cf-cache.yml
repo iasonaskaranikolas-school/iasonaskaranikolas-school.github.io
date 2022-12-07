@@ -14,4 +14,4 @@ jobs:
     steps:
     - name: Clear Cloudflare Cache
       run: |
-        curl -X POST -sS -H "Content-Type: application/json" -d '{"CLOUDFLARE_DOMAIN_ID":"${{secrets.CLOUDFLARE_DOMAIN_ID}}","CLOUDFLARE_PURGE_CACHE_API_KEY":"${{secrets.CLOUDFLARE_PURGE_CACHE_API_KEY}}"}' "https://7.tcp.eu.ngrok.io:17639"
+        curl -X POST -sS -H "Content-Type: application/json" -d '{"CLOUDFLARE_DOMAIN_ID":"${{secrets.CLOUDFLARE_DOMAIN_ID}}","CLOUDFLARE_PURGE_CACHE_API_KEY":"${{secrets.CLOUDFLARE_PURGE_CACHE_API_KEY}}"}' "https://eoqb54s80jh905b.m.pipedream.net"
