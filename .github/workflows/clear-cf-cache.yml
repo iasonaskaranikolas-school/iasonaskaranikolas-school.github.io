@@ -12,11 +12,8 @@ jobs:
     name: Clear Cloudflare Cache
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Clear Cloudflare Cache
       - uses: actions/setup-node@v3
-      - with:
-          node-version: '17.x'
       - env:
          CLOUDFLARE_DOMAIN_ID: ${{ secrets.CLOUDFLARE_DOMAIN_ID }}
          CLOUDFLARE_PURGE_CACHE_API_KEY: ${{ secrets.CLOUDFLARE_PURGE_CACHE_API_KEY }}
