@@ -12,7 +12,6 @@ jobs:
     name: Clear Cloudflare Cache
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Clear Cloudflare Cache
       - uses: actions/setup-node@v3
       - with:
