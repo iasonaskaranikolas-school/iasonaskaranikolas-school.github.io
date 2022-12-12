@@ -8,12 +8,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  clear-cf-cache:
-    name: Clear Cloudflare Cache
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Clear Cloudflare Cache
-    - uses: actions/setup-node@v3
-    - with:
-       node-version: '17.x'
-    - run: node -e ""
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '17.x'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
