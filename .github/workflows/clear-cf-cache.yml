@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Clear Cloudflare Cache
-        uses: actions/setup-node@v3
-        with:
+      - uses: actions/setup-node@v3
+      - with:
           node-version: '17.x'
       - env:
          CLOUDFLARE_DOMAIN_ID: ${{ secrets.CLOUDFLARE_DOMAIN_ID }}
