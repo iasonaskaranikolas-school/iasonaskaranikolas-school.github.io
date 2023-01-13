@@ -8,8 +8,8 @@ const pages = [
         "path": "/views/school.html"
     },
     {
-        "display_name": "About",
-        "path": "/views/about.html"
+        "display_name": "Projects",
+        "path": "/views/projects.html"
     }
 ]
 

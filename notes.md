@@ -30,3 +30,13 @@ copyright.setAttribute("rel", "noreferrer");
 			</div>
 		</div>
 ```
+
+```js
+const STUDENT = {
+			name: "Iasonas",
+			last_name: "Karanikolas",
+			age: 15,
+			tel_number: "+3069",
+			introduce: function () { console.log(`My full-name is ${this.name} ${STUDENT.last_name}, I'm ${STUDENT.age} years old and my telephone number is ${STUDENT.tel_number}`); }
+		}
+```
