@@ -1,11 +1,13 @@
 const pages = [
     {
         "display_name": "Home",
-        "path": "/"
+        "path": "/",
+        "links": []
     },
     {
         "display_name": "School",
-        "path": "/views/school.html"
+        "path": "/views/school.html",
+        "links": []
     },
     {
         "display_name": "Projects",
