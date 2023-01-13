@@ -9,7 +9,8 @@ const pages = [
     },
     {
         "display_name": "Projects",
-        "path": "/views/projects.html"
+        "path": "/views/projects.html",
+        "links": ["/projects/wwii/index.html"]
     }
 ]
 
@@ -19,11 +20,11 @@ const loadTopNav = () => {
         if (topnav !== null && topnav !== undefined) {
             for (const page of pages) {
                 if (page !== null && page !== undefined) {
-                    if ((page.display_name !== null && page.display_name !== undefined) && (page.path !== null && page.path !== undefined)) {
+                    if ((page.display_name !== null && page.display_name !== undefined) && (page.path !== null && page.path !== undefined) && (page.links !== null && page.links !== undefined)) {
                         const elem = document.createElement("a");
                         elem.innerText = page.display_name;
                         elem.setAttribute("href", page.path);
-                        if (window.location.pathname === page.path) {
+                        if ((window.location.pathname === page.path) || (page.links.includes(window.location.pathname))) {
                             elem.classList.add("active");
                         }
                         topnav.appendChild(elem);
