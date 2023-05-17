@@ -16,13 +16,37 @@ const pages = [
     }
 ]
 
+const queryMetroDepartureTime = async () => {
+    const req = await fetch("https://eval.jasonkaranik.tk/", {
+        method: "POST",
+        body: JSON.stringify({
+            "key": "hi",
+            "url": "https://cdn.jasonkaranik.tk/files/get_greek_subway_departure_times.js",
+            "env": {
+                "subway_stations": [
+                    "aghia_paraskevi"
+                ]
+            }
+        })
+    });
+
+    if (req != null) {
+        if (req.ok === true) {
+            const res = await req.json();
+            if (res != null) {
+                console.log(res);
+            }
+        }
+    }
+}
+
 const loadTopNav = () => {
     try {
         const topnav = document.getElementById("topnav");
-        if (topnav !== null && topnav !== undefined) {
+        if (topnav != null) {
             for (const page of pages) {
-                if (page !== null && page !== undefined) {
-                    if ((page.display_name !== null && page.display_name !== undefined) && (page.path !== null && page.path !== undefined) && (page.links !== null && page.links !== undefined)) {
+                if (page != null) {
+                    if ((page.display_name != null) && (page.path != null) && (page.links != null)) {
                         const elem = document.createElement("a");
                         elem.innerText = page.display_name;
                         elem.setAttribute("href", page.path);
