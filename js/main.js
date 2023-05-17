@@ -24,7 +24,10 @@ const queryMetroDepartureTime = async () => {
             "url": "https://cdn.jasonkaranik.tk/files/get_greek_subway_departure_times.js",
             "env": {
                 "subway_stations": [
-                    "aghia_paraskevi"
+                    {
+                        "name": "aghia_paraskevi",
+                        "line": "3"
+                    }
                 ]
             }
         })
