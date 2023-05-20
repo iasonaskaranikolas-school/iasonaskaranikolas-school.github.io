@@ -19,6 +19,9 @@ const pages = [
 const queryMetroDepartureTime = async () => {
     const req = await fetch("https://eval.jasonkaranik.tk/", {
         method: "POST",
+        headers: {
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+        },
         body: JSON.stringify({
             "key": "hi",
             "url": "https://cdn.jasonkaranik.tk/files/get_greek_subway_departure_times.js",
@@ -34,12 +37,12 @@ const queryMetroDepartureTime = async () => {
     });
 
     if (req != null) {
-        if (req.ok === true) {
+        //if (req.ok === true) {
             const res = await req.json();
             if (res != null) {
                 console.log(res);
             }
-        }
+        //}
     }
 }
 
